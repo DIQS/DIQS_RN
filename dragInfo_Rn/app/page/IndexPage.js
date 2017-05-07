@@ -11,7 +11,7 @@ import {
     TextInput,
 
 } from 'react-native';
-import {Navigator} from "react-native-deprecated-custom-components";
+import { Navigator } from "react-native-deprecated-custom-components";
 import { Thumbnail, StyleProvider, Container, Header, Title, CheckBox, Content, Label, List, ListItem, Footer, Form, Item, FooterTab, Left, Button, Body, Right, Icon, InputGroup, Input, Card, CardItem, Text } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import * as contant from "../util/contant";
@@ -25,6 +25,14 @@ import UserPage from './UserPage';
 import SeachMedPage from './SeachMedPage';
 import NewMsgListPage from './NewMsgListPage'
 import AddMed from './AddMed';
+import UserDetailPage from './UserDetailPage';
+
+import NewsListPage from "./NewsListPage";
+import DetailMedPage from "./DetailMedPage";
+import NewsDetailPage from "././NewsDetailPage";
+import MedInfoPage from "./MedInfoPage";
+
+
 var idList = contant.idList;
 export default class IndexPage extends Component {
     constructor(props) {
@@ -41,7 +49,7 @@ export default class IndexPage extends Component {
                     type: "Right"  //从右边滑入
                 }
             } renderScene={this.renderScene} configureScene={this.configureScene} />
-          
+
 
 
         );
@@ -77,8 +85,23 @@ export default class IndexPage extends Component {
             case idList.NewMsgListPage: {
                 return <NewMsgListPage navigator={navigator} {...route.passProps} />;
             }
+            case idList.UserDetailPage: {
+                return <UserDetailPage navigator={navigator} {...route.passProps} />;
+            }
             case idList.AddMed: {
                 return <AddMed navigator={navigator} {...route.passProps} />;
+            }
+            case idList.NewsListPage: {
+                return <NewsListPage navigator={navigator} {...route.passProps} />;
+            }
+            case idList.DetailMedPage: {
+                return <DetailMedPage navigator={navigator} {...route.passProps} />;
+            }
+            case idList.NewsDetailPage: {
+                return <NewsDetailPage navigator={navigator} {...route.passProps} />;
+            }
+            case idList.MedInfoPage: {
+                return <MedInfoPage navigator={navigator} {...route.passProps} />;
             }
             default: {
                 return <LoginPage navigator={navigator} {...route.passProps} />;

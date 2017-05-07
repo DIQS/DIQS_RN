@@ -151,7 +151,7 @@ export default class DetialQuestionPage extends Component {
     commitOneQuestion() {
         //回答，写问题,跳转界面
         var jsonObj = {
-            id: "answerToQuestion",
+            id: contant.idList.AnswerToQuestionPage,
             passProps: {
                 titleText: this.props.titleText, //把题目穿进去
                 cid: this.props.cid,

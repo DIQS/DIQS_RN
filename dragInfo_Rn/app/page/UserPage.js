@@ -96,7 +96,19 @@ export default class UserInfo extends Component {
                 <Content>
                     <Card>
 
-                        <CardItem button >
+                        <CardItem button onPress={
+                            ()=>{
+                                var json={
+                                    id:contant.idList.UserDetailPage,
+                                    passProps:{},
+                                    type:"Right"
+                                }
+                                this.props.navigator.push(json)
+
+                            }
+
+
+                        } >
                             {
 
                                 this.renderThumbnail()

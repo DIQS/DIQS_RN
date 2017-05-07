@@ -45,7 +45,7 @@ export default class LoginPage extends Component {
                         </Item>
                         <Item >
                             <Label>密码</Label>
-                            <TextInput underlineColorAndroid='transparent' secureTextEntry style={{ flex: 1 }} onChangeText={this.onPwdAccount} />
+                            <TextInput secureTextEntry={true} underlineColorAndroid='transparent'  style={{ flex: 1 }} onChangeText={this.onPwdAccount} />
                         </Item>
 
                     </Form>

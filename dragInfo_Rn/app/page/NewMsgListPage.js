@@ -26,7 +26,7 @@ import {
     Text
 } from 'native-base';
 import * as contant from "../util/contant"
-var ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+var ds = contant.ds;
 var cidsTemp = [];
 var nidsTemp = [];
 export default class NewMsgListPage extends Component {
@@ -160,7 +160,7 @@ export default class NewMsgListPage extends Component {
             return (<Thumbnail source={require('../resources/user_selected.png')} />);
 
         } else {
-            return (<Thumbnail source={{ uri: contant.SERVER_ROOT + contant.IMAGE_ROOT_PEOPLE + rowData.thumbnail }} />)
+            return (<Thumbnail source={{ uri: contant.SERVER_ROOT + contant.SERVER_SERVICE.IMAGE_ROOT_PEOPLE + rowData.thumbnail }} />)
             //显示头像
         }
 
@@ -168,7 +168,7 @@ export default class NewMsgListPage extends Component {
     }
     async toDetail(data) {
         //进入帖子详情,请求帖子
-        var url = contant.SERVER_ROOT + contant.GET_COVERSIONLIST_BY_ID;
+        var url = contant.SERVER_ROOT + contant.SERVER_SERVICE.GET_COVERSIONLIST_BY_ID;
         url = url + "?";
         url += "nid=" + contant.USER.nid + "&";
         url += "cid=" + data.cid;
@@ -185,7 +185,7 @@ export default class NewMsgListPage extends Component {
             var data = await response.json();
 
             var jsonObj = {
-                id: "detialQuestion",
+                id: contant.idList.DetialQuestionPage,
                 passProps: data,
                 type:"Right"
             };
